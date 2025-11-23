@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeStats Web Analyzer</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>PokeStats Web Analyzer</h1>
+        <p>Explora, filtra y analiza estadísticas de Pokémon.</p>
+        <button id="darkModeToggle" class="dark-btn">🌙 </button> <button id="typeChartBtn" class="dark-btn">📘 </button>
+
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <main>
+
+        <!-- PANEL DE FILTROS -->
+        <aside id="filters">
+            <h2>Filtros</h2>
+        <hr>
+
+    <h3>Filtrar por Estadísticas</h3>
+
+    <div class="filter-group">
+    <label for="statSelect">Estadística:</label>
+    <select id="statSelect">
+        <option value="">Seleccionar</option>
+        <option value="hp">HP</option>
+        <option value="attack">Attack</option>
+        <option value="defense">Defense</option>
+        <option value="spAttack">Sp. Attack</option>
+        <option value="spDefense">Sp. Defense</option>
+        <option value="speed">Speed</option>
+    </select>
+    </div>
+
+    <div class="filter-group">
+    <label for="statMin">Valor mínimo:</label>
+    <input type="number" id="statMin" placeholder="Ej: 50">
+    </div>
+
+    <div class="filter-group">
+    <label for="statMax">Valor máximo:</label>
+    <input type="number" id="statMax" placeholder="Ej: 100">
+    </div>
+
+    <button id="clearFilters" class="clear-btn">Limpiar Filtros</button>
+
+    <hr>
+
+    <h3>Ordenar</h3>
+
+    <div class="filter-group">
+        <label for="sortStat">Ordenar por:</label>
+        <select id="sortStat">
+            <option value="">Seleccionar</option>
+            <option value="hp">HP</option>
+            <option value="attack">Attack</option>
+            <option value="defense">Defense</option>
+            <option value="spAttack">Sp. Attack</option>
+            <option value="spDefense">Sp. Defense</option>
+            <option value="speed">Speed</option>
+            <option value="total">Total (suma de stats)</option>
+        </select>
+    </div>
+
+    <div class="filter-group">
+        <label for="sortOrder">Dirección:</label>
+        <select id="sortOrder">
+            <option value="asc">Ascendente</option>
+            <option value="desc">Descendente</option>
+        </select>
+    </div>
+
+        
+            <!-- Búsqueda -->
+            <div class="filter-group">
+                <label for="search">Buscar Pokémon:</label>
+                <input type="text" id="search" placeholder="Ej. Pikachu">
+            </div>
+
+            <!-- Tipo -->
+            <div class="filter-group">
+                <label for="typeFilter">Tipo:</label>
+                <select id="typeFilter">
+                    <option value="">Todos</option>
+                    <!-- Opciones dinámicas desde JS -->
+                </select>
+            </div>
+
+            <!-- Generación -->
+            <div class="filter-group">
+                <label for="generationFilter">Generación:</label>
+                <select id="generationFilter">
+                    <option value="">Todas</option>
+                    <option value="1">Generación 1</option>
+                    <option value="2">Generación 2</option>
+                    <option value="3">Generación 3</option>
+                    <option value="4">Generación 4</option>
+                    <option value="5">Generación 5</option>
+                    <option value="6">Generación 6</option>
+                </select>
+            </div>
+
+        </aside>
+
+        <!-- LISTA DE POKÉMON -->
+        <section id="pokemonList">
+            <!-- Las cards se generan dinámicamente con JS -->
+        </section>
+
+        <!-- PANEL DE DETALLES -->
+        <section id="pokemonDetails">
+            <h2>Detalles del Pokémon</h2>
+            <div id="detailsContent">
+                <!-- Aquí JS insertará la información -->
+                <p>Selecciona un Pokémon para ver sus estadísticas.</p>
+            </div>
+
+            <!-- Gráfica -->
+            <canvas id="statsChart"></canvas>
+        </section>
+
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="app.js"></script>
+
+</body>
+</html>

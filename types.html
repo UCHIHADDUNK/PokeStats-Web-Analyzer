@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fortalezas VS Debilidades Pokémon</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos extra solo para esta página */
+        .type-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        .type-table th, .type-table td {
+            border: 1px solid #444;
+            padding: 8px;
+            text-align: center;
+        }
+        .type-table th {
+            background-color: #333;
+            color: white;
+        }
+        .type-strong {
+            background-color: #4caf50;
+            color: white;
+        }
+        .type-weak {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>📘 Fortalezas vs Debilidades</h1>
+
+        <button onclick="window.location.href='index.html'" class="dark-btn">
+            ⬅ Volver
+        </button>
+    </header>
+
+    <main style="padding:20px">
+        <p>
+            *En esta tabla puedes ver qué tipos son fuertes o débiles contra otros.
+        </p>
+
+        <table class="type-table">
+    <tr>
+        <th>Tipo</th>
+        <th>Fuerte Contra</th>
+        <th>Débil Contra</th>
+    </tr>
+
+    <tr><td class="type fire">Fire</td><td class="strong">Grass, Ice, Bug, Steel</td><td class="weak">Water, Rock, Ground</td></tr>
+    <tr><td class="type water">Water</td><td class="strong">Fire, Rock, Ground</td><td class="weak">Electric, Grass</td></tr>
+    <tr><td class="type grass">Grass</td><td class="strong">Water, Ground, Rock</td><td class="weak">Fire, Ice, Poison, Flying, Bug</td></tr>
+    <tr><td class="type electric">Electric</td><td class="strong">Water, Flying</td><td class="weak">Ground</td></tr>
+    <tr><td class="type ice">Ice</td><td class="strong">Grass, Ground, Flying, Dragon</td><td class="weak">Fire, Fighting, Rock, Steel</td></tr>
+    <tr><td class="type fighting">Fighting</td><td class="strong">Normal, Ice, Rock, Dark, Steel</td><td class="weak">Flying, Psychic, Fairy</td></tr>
+    <tr><td class="type poison">Poison</td><td class="strong">Grass, Fairy</td><td class="weak">Ground, Psychic</td></tr>
+    <tr><td class="type ground">Ground</td><td class="strong">Fire, Electric, Poison, Rock, Steel</td><td class="weak">Water, Grass, Ice</td></tr>
+    <tr><td class="type flying">Flying</td><td class="strong">Grass, Fighting, Bug</td><td class="weak">Electric, Ice, Rock</td></tr>
+    <tr><td class="type psychic">Psychic</td><td class="strong">Fighting, Poison</td><td class="weak">Bug, Ghost, Dark</td></tr>
+    <tr><td class="type bug">Bug</td><td class="strong">Grass, Psychic, Dark</td><td class="weak">Fire, Flying, Rock</td></tr>
+    <tr><td class="type rock">Rock</td><td class="strong">Fire, Ice, Flying, Bug</td><td class="weak">Water, Grass, Fighting, Ground, Steel</td></tr>
+    <tr><td class="type ghost">Ghost</td><td class="strong">Psychic, Ghost</td><td class="weak">Ghost, Dark</td></tr>
+    <tr><td class="type dragon">Dragon</td><td class="strong">Dragon</td><td class="weak">Ice, Dragon, Fairy</td></tr>
+    <tr><td class="type dark">Dark</td><td class="strong">Psychic, Ghost</td><td class="weak">Fighting, Bug, Fairy</td></tr>
+    <tr><td class="type steel">Steel</td><td class="strong">Ice, Rock, Fairy</td><td class="weak">Fire, Fighting, Ground</td></tr>
+    <tr><td class="type fairy">Fairy</td><td class="strong">Fighting, Dragon, Dark</td><td class="weak">Poison, Steel</td></tr>
+    <tr><td class="type normal">Normal</td><td class="strong">—</td><td class="weak">Fighting</td></tr>
+</table>
+
+    </main>
+</body>
+</html>
