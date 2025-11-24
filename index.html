@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TB91NWVZE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0TB91NWVZE');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PokeStats Web Analyzer</title>
 
     <!-- CSS principal -->
     <link rel="stylesheet" href="styles.css">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 
 <body>
 
@@ -18,8 +27,8 @@
     <header>
         <h1>PokeStats Web Analyzer</h1>
         <p>Explora, filtra y analiza estadísticas de Pokémon.</p>
-        <button id="darkModeToggle" class="dark-btn">🌙 </button> <button id="typeChartBtn" class="dark-btn">📘 </button>
-
+        <button id="darkModeToggle" class="dark-btn">🌙</button>
+        <button id="typeChartBtn" class="dark-btn">📘</button>
     </header>
 
     <!-- CONTENEDOR PRINCIPAL -->
