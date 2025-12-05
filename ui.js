@@ -1,6 +1,8 @@
 // ui.js
 
-// Crear cada card del Pokémon
+/* ============================================================
+   CREAR CARD DE POKÉMON
+============================================================ */
 export function createCard(pokemon) {
     return `
         <div class="pokemon-card" data-id="${pokemon.id}">
@@ -15,11 +17,13 @@ export function createCard(pokemon) {
     `;
 }
 
-// Mostrar lista completa en pantalla
+/* ============================================================
+   MOSTRAR LISTA COMPLETA EN PANTALLA
+============================================================ */
 export function displayPokemonList(list) {
     const container = document.getElementById("pokemonList");
 
-    if (list.length === 0) {
+    if (!list || list.length === 0) {
         container.innerHTML = "<p>No hay resultados.</p>";
         return;
     }
@@ -27,9 +31,18 @@ export function displayPokemonList(list) {
     container.innerHTML = list.map(createCard).join("");
 }
 
-// Mostrar detalles de un Pokémon seleccionado
+/* ============================================================
+   MOSTRAR DETALLES + SONIDO AUTOMÁTICO
+============================================================ */
 export function displayDetails(pokemon) {
     const panel = document.getElementById("detailsContent");
+
+    // Normalizar nombre para reproducir el "cry"
+    const cleanName = pokemon.name
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "");  // Mr. Mime → mrmime
+
+    const cryUrl = `https://play.pokemonshowdown.com/audio/cries/${cleanName}.ogg`;
 
     panel.innerHTML = `
         <img 
@@ -51,5 +64,27 @@ export function displayDetails(pokemon) {
             <li>Sp. Defense: ${pokemon.stats.spDefense}</li>
             <li>Speed: ${pokemon.stats.speed}</li>
         </ul>
+
+        <button id="playCryBtn" class="cry-btn">🔊 Reproducir sonido</button>
+
+        <audio id="pokeCry" src="${cryUrl}"></audio>
     `;
+
+    /* ---------------------------------------------
+       MANEJO DE AUDIO
+    ---------------------------------------------- */
+    const audio = document.getElementById("pokeCry");
+
+    // 🔥 SONIDO AUTOMÁTICO
+    audio.volume = 0.85;
+    audio.currentTime = 0;
+    audio.play().catch(() => {
+        console.warn("Autoplay bloqueado por el navegador.");
+    });
+
+    // 🔊 Botón manual
+    document.getElementById("playCryBtn").addEventListener("click", () => {
+        audio.currentTime = 0;
+        audio.play();
+    });
 }

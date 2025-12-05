@@ -101,3 +101,7 @@ document.getElementById("darkModeToggle").addEventListener("click", () => {
 document.getElementById("typeChartBtn").addEventListener("click", () => {
     window.location.href = "types.html";
 });
+
+document.getElementById("goToPageBtn").addEventListener("click", () => {
+    window.open("https://pokestatsanalyzer.netlify.app", "_blank");
+});
